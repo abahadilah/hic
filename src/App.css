@@ -1,0 +1,259 @@
+.App {
+  text-align: left;
+  margin-top: 20px;
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Hic-Dashboard {
+  margin-top: 70px;
+  margin-left: 10px;
+}
+
+.Hic-Column-1 {
+  margin-left: 4px;
+  width: 90px;
+  text-align: center;
+}
+
+.Hic-Column-2 {
+  margin-left: 8px;
+  text-align: center;
+  width: 90px;
+}
+
+
+.Hic-Column-3 {
+  margin-left: 8px;
+  text-align: center;
+  width: 90px;
+}
+
+.Hic-Column-4 {
+  margin-left: 8px;
+  width: 200px;
+  text-align: center;
+}
+
+.Hic-Column-5 {
+  width: 90px;
+  text-align: center;
+}
+
+.Hic-Column-6 {
+  width: 90px;
+  text-align: center;
+}
+
+.Hic-Label {
+  height: 25px;
+  line-height: 25px;
+}
+
+.Hic-Input {
+  margin-left: 10px;
+}
+
+.Hic-Jupiter {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.Hic-Jupiter-Label {
+  border:0.5px solid grey;
+  margin-bottom: 2px;
+  width: 300px;
+  padding: 6px;
+}
+
+.Hic-Location {
+  column-count: 2;
+}
+
+.Hic-Dialog-Title {
+  column-count: 2;
+  height: 40px;
+  border-width: 1px;
+  border-color: #DCDEE3;
+  border-style: solid;
+  cursor: move;
+}
+
+.Hic-Dialog-Title-Text {
+  font-family: "Noto Serif";
+  font-size: 0.9em; 
+  font-weight: bold;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.Hic-Preference-Button {
+  column-count: 2;
+}
+
+.Hic-Table-Row-Even {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: rgb(239, 243, 246);
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
+.Hic-Table-Row-Odd {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: white;
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
+.Hic-Week {
+  column-count: 7;
+  column-gap: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #DCDEE3;
+  font-weight: 500;
+  font-family: "Noto Serif";
+  font-size: 0.75em;
+}
+.Hic-Day-Row{
+  column-count: 7;
+  column-gap: 0px;
+}
+
+.Hic-Week-Item {
+  text-align: center;
+}
+
+.Hic-Date-Item {
+  border-width: 1px;
+  border-color: #DCDEE3;
+  border-style: solid;
+  text-align: center;
+  font-family: "Noto Serif";
+  font-size: 0.75em;
+}
+
+.Hic-Date-Item-Empty {
+  border-width: 1px;
+  border-color: #DCDEE3;
+  border-style: solid;
+  text-align: center;
+  font-family: "Noto Serif";
+  font-size: 0.75em;
+}
+
+.Hic-Date-Item:hover {
+  background-color: #DCDEE3;
+  font-weight: 500;
+}
+
+.Hic-Date-Item-Selected {
+  border-width: 1px;
+  border-color: #DCDEE3;
+  border-style: solid;
+  text-align: center;
+  font-family: "Noto Serif";
+  font-size: 0.75em;
+  color: white;
+  background-color: #1178D4;
+}
+
+.Hic-Planet-Column1 {
+  font-family: "Noto Serif";
+  font-size: 0.75em;
+  width: 60px;
+  white-space: nowrap;
+  float: left;
+}
+
+.Hic-Planet-Column2 {
+  font-family: "Noto Serif";
+  font-size: 0.75em;
+  text-align: center;
+  white-space: nowrap;
+  float: left;
+}
+
+.Hic-Planet-Column3 {
+  font-family: "Noto Serif";
+  font-size: 0.75em;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.Hic-Day-Checkbox {
+  font-family: "Noto Serif";
+  font-size: 0.8em;
+  text-align: center;
+  width: 100px;
+  white-space: nowrap;
+  float: left;
+}
+
+.Hic-Preference-Title {
+  font-family: "Noto Serif";
+  font-size: 0.9em;
+  white-space: nowrap;
+  width: 210px;
+  font-weight: bold;
+  float: left;
+  margin-left: 8px;
+  margin-top: 6px;
+}
+
+.Hic-Preference-Title-1 {
+  font-family: "Noto Serif";
+  font-size: 0.9em;
+  white-space: nowrap;
+  width: 210px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.Hic-Preference-Title-2 {
+  font-family: "Noto Serif";
+  font-size: 0.9em;
+  white-space: nowrap;
+  width: 118px;
+  float: left;
+  margin-left: 100px;
+  margin-top: 6px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

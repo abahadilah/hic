@@ -77,6 +77,7 @@ var wukuMsg;
 var typMsg;
 var leftMsg;
 var yearMsg;
+var yearSave;
 var kiranaLeftMsg;
 var kiranaRightMsg;
 
@@ -157,7 +158,7 @@ class DayDialog extends React.Component {
         var hh = date.getHours()
         var mm = date.getMinutes()
         
-        var filename = sprintf("day_%1$4d_%2$02d_%3$02d__%4$02d_%5$02d.jpeg", year, month, dd, hh, mm)
+        var filename = sprintf("hic-day_%1$s.jpg", yearSave)
 
 
         var aDownload = document.getElementById("aDownload")
@@ -217,6 +218,9 @@ class DayDialog extends React.Component {
 
       msgW = sprintf("%1$s %2$4d %3$s %4$2d %5$s", msgW, y1, this.props.westMonth[parseInt(this.props.wM[day])-1], 
         this.props.wD[day],  wkDy)
+
+        yearSave = sprintf("%1$4d_%2$2d_%3$2d", y1, parseInt(this.props.wM[day]), 
+        this.props.wD[day])
       
       
       var temp = this.props.facSidCiv * this.props.timeDiff / 86400;
@@ -565,12 +569,6 @@ class DayDialog extends React.Component {
     wuku (jd) {
       const sixDay = ["TU", "HA", "WU", "PA", "WA", "MA"];
       const fiveDay = ["PA", "PO", "WA", "KA", "UM"];
-      const sevenDay = ["Ā", "SO", "AN", "BU", "BR", "SU", "SA"];
-      const wukWeek = ["Sinta", "Landep", "Wukir", "Kurantil", "Tolu",
-        "Gumbreg", "Wariga ning Wariga", "Wariga", "Julung", "Julung SungSang", "Dunulan",
-        "Kuninan", "Langkir", "Madasiha", "Julung Pujut", "Pahang", "Kuru Wlut",
-        "Marakih", "Tambir", "Madankunan", "Maha Tal", "Wuyai", "Manahil", "Prang Bakat",
-        "Balamuki", "Wugu-wugu", "Wayang-wayang", "Kulawu", "Dukut", "Watu Gunung"];
         
       var jdInt = parseInt((jd + 65) % 210);
       var wk = parseInt(((jd + 64) % 210) / 7 + 1);
@@ -585,9 +583,9 @@ class DayDialog extends React.Component {
       var str = sixDay[curWukTarget[0]-1]; //Compose wuku string}
       var str1 = fiveDay[curWukTarget[1]-1];
       str = str + " " + str1;
-      str1 = sevenDay[curWukTarget[2]-1];
+      str1 = this.props.sevenDay[curWukTarget[2]-1];
       str = str + " " + str1;
-      str1 = wukWeek[wk-1];
+      str1 = this.props.wukWeek[wk-1];
       str = str + " " + str1; 
       return str;
     }
@@ -964,6 +962,8 @@ class DayDialog extends React.Component {
             />
           </div>    
           <WukuDialog     
+                  sevenDay={this.props.sevenDay}
+                  wukWeek={this.props.wukWeek}
                   autoSearch={this.props.autoSearch}
                   searchDir={this.props.searchDir}
                   open={this.props.wukuSelected} 

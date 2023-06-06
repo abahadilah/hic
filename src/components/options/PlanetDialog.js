@@ -81,7 +81,7 @@ class PlanetDialog extends React.Component {
         var hh = date.getHours()
         var mm = date.getMinutes()
         
-        var filename = sprintf("planets_%1$4d_%2$02d_%3$02d__%4$02d_%5$02d.jpeg", year, month, dd, hh, mm)
+        var filename = sprintf("hic-planet.jpg")
 
 
         var aDownload = document.getElementById("aDownload")

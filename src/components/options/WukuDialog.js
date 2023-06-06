@@ -15,20 +15,6 @@ import { withTranslation } from 'react-i18next';
 
 const Item6 = ["TU","HA","WU","PA","WA","MA","**"];
 const Item5 = ["PA","PO","WA","KA","UM","**"];
-const Item7 = ["Ā","SO","AN","BU","BR","SU","SA","**"];
-const WukWeek = ["Sinta", "Landep", "Wukir", "Kurantil", "Tolu",
-        "Gumbreg", "Wariga ning Wariga", "Wariga", "Julung", "Julung SungSang", "Dunulan",
-        "Kuninan", "Langkir", "Madasiha", "Julung Pujut", "Pahang", "Kuru Wlut",
-        "Marakih", "Tambir", "Madankunan", "Maha Tal", "Wuyai", "Manahil", "Prang Bakat",
-        "Balamuki", "Wugu-wugu", "Wayang-wayang", "Kulawu", "Dukut", "Watu Gunung"];
-const sixDay = ["TU", "HA", "WU", "PA", "WA", "MA"];
-const fiveDay = ["PA", "PO", "WA", "KA", "UM"];
-const sevenDay = ["Ā", "SO", "AN", "BU", "BR", "SU", "SA"];
-const wukWeek = ["Sinta", "Landep", "Wukir", "Kurantil", "Tolu",
-  "Gumbreg", "Wariga ning Wariga", "Wariga", "Julung", "Julung SungSang", "Dunulan",
-  "Kuninan", "Langkir", "Madasiha", "Julung Pujut", "Pahang", "Kuru Wlut",
-  "Marakih", "Tambir", "Madankunan", "Maha Tal", "Wuyai", "Manahil", "Prang Bakat",
-  "Balamuki", "Wugu-wugu", "Wayang-wayang", "Kulawu", "Dukut", "Watu Gunung"];
   
 
 const style = {};
@@ -123,6 +109,9 @@ class WukuDialog extends React.Component {
         }, 500)
       }
 
+      var item7 = this.props.sevenDay
+      item7[item7.length-1] = "**";
+
       return (
         <div  onMouseDown={this.handleTitleClick}>          
           <Dialog
@@ -196,7 +185,7 @@ class WukuDialog extends React.Component {
                           onChange={this.handleSelected3Change}
                         >
                           {
-                            Item7.map(
+                            item7.map(
                               (m, index) => <MenuItem key={index} value={index} style={{fontSize: "0.75em"}}>{m}</MenuItem>
                             )
                           }

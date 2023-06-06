@@ -118,6 +118,10 @@ class HicAppBar extends React.Component {
       )
     }
 
+    onManualClick(e, value) {
+      window.open(window.MANUAL_URL, '_blank', 'noopener,noreferrer');
+    }
+
     onTableMenuItemClick(e, menu, title) {
       this.onTablesMenuClose(e)
       this.props.tableMenuHandleCallback(title, menu)
@@ -167,6 +171,15 @@ class HicAppBar extends React.Component {
                   Tables
                 </Button>
                 <Button id="canons-button" key="Canons" sx={{ color: '#fff' }}  onClick={
+                  (e)  => this.onManualClick(e)
+              }
+              aria-controls={this.state.menuOptionsVisible ? 'canons-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={this.state.menuOptionsVisible ? 'true' : undefined}
+              >
+                  Manual
+                </Button>
+                <Button id="canons-button" key="Canons" sx={{ color: '#fff' }}  onClick={
                   (e)  => this.onCanonsMenuClick(e)
               }
               aria-controls={this.state.menuOptionsVisible ? 'canons-menu' : undefined}
@@ -189,14 +202,17 @@ class HicAppBar extends React.Component {
             <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 0, "Tithi/Karaṇa")}>
               Tithi/Karaṇa
             </MenuItem>
-            <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 1, "Nakṣatra")}>
-            Nakṣatra
+            <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 1, "Nakṣatra/Devatā")}>
+            Nakṣatra/Devatā
               </MenuItem>
             <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 2, "Yoga")}>
               Yoga
             </MenuItem>
             <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 3, "Jupiter Year")}>
               Jupiter Year
+            </MenuItem>
+            <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 4, "Wuku")}>
+              Wuku
             </MenuItem>
         </Menu>
         </AppBar>        

@@ -8,20 +8,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import { sprintf } from "sprintf-js";
 import { withTranslation } from 'react-i18next';
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 250,
-  height: "80%",
-  bgcolor: 'background.paper',
-  overflow:'scroll',
-  border: '2px solid #000',
-  display:'block',
-  boxShadow: 24,
-};
-
 const TithiName = ["pratipadā","dvitīya","tr̥tīya","caturthī",
 					"pañcamī","ṣaṣṭhī",
 					"saptamī","aṣṭamī","navamī","daśamī",
@@ -35,9 +21,17 @@ const NakName = ["aśvinī","bharaṇī","kr̥ttikā","rohiṇī",
 					"mr̥gaśiras","ārdrā","punarvasū", "puṣya","āśleṣā",
 					"maghā","pūrvaphalgunī","uttaraphalgunī", "hasta", "citrā",
 					"svāti","viśākhā","anurādhā","jyeṣṭhā",
-					"mūla","purvāṣāḍhā","uttarāṣāḍhā",
+					"mūla","purvāṣāḍhā","uttarāṣāḍhā","abhijit",
 					"śravaṇā","dhaniṣṭha","śatabhiṣaj","pūrvabhadrapadā",
 					"uttarabhadrapadā", "revatī"]
+
+const Devata = ["Aśvī, Aśvinī, Aśvinau, Dasra","Yama","Agni, Dahana","Prajāpati, Dhātr̥, Kamalaja",
+					"Soma, Śaśin","Rudra, Śarva, Śūlabhr̥t","Aditi", "Br̥haspati, Vākpati, Jīva","Sarpāḥ, Phaṇi, Ahideva",
+					"Pitaraḥ, Pitr̥deva","Bhaga, Yoni","Aryaman", "Savitr̥, Sāvitra, Ravi, Dinakr̥t", "Tvaṣṭr̥",
+					"Vāyu, Māruta, Pavana, Anila","Indrāgni, Śakrāgni","Mitra","Indra, Śakra",
+					"Nirr̥ti, Pitaraḥ","Āpaḥ, Toya","Viśvedevāḥ, Viśve","Brahmā",
+					"Viṣṇu, Hari / Brahmā, Vidhi","Vasavaḥ, Vasu, Vasudeva, Govinda / Viṣṇu, Hari","Varuṇa","Aja Ekapād, Ekapāda, Ajacaraṇa, Ajapāda",
+					"Ahirbudhnya, Ahirbudhna", "Pūṣan"]
 
 const YogaName = ["viṣkamba","prīti","āyuṣmat","saubhāgya",
 					"śobhana","atigaṇḍa","sukarman", "dhr̥ti","śūla",
@@ -99,6 +93,10 @@ class TableDialog extends React.Component {
       const { t } = this.props;
 
       var arr = [];
+      var column1ClassName = "Hic-Table-Column1"
+      var column2ClassName = "Hic-Table-Footer-None"
+      var titleColumnClassName = "Hic-Table-Footer-None"
+      var width = 250
       
       if (this.props.menu == 0) {
         for(var i=0; i < 30; i++) {
@@ -127,7 +125,17 @@ class TableDialog extends React.Component {
       }
       else
       if (this.props.menu == 1) {
-        arr = NakName
+        for(var i=0; i < NakName.length; i++) {
+          var a = []
+          a[0] = NakName[i]
+          a[1] = Devata[i]
+          arr[i] = a
+
+          titleColumnClassName = "Hic-Table-Column1"
+          column1ClassName = "Hic-Table-Column-Naksatra"
+          column2ClassName = "Hic-Table-Column1"
+          width = 425
+        }        
       }
       else
       if (this.props.menu == 2) {
@@ -137,6 +145,25 @@ class TableDialog extends React.Component {
       if (this.props.menu == 3) {
         arr = JupYearName
       }
+      else
+      if (this.props.menu == 4) {
+        arr = this.props.wukWeek
+      }
+
+
+      const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: width,
+        height: "80%",
+        bgcolor: 'background.paper',
+        overflow:'scroll',
+        border: '2px solid #000',
+        display:'block',
+        boxShadow: 24,
+      };
 
       return (
         <div>          
@@ -155,14 +182,24 @@ class TableDialog extends React.Component {
                       </IconButton>
                     </div>
                 </div>
+                <div className={titleColumnClassName}>
+                <Stack spacing={1.5} direction="row">
+                    <div style={{textAlign: "right", width: 25}}>&nbsp;</div>
+                    <div className="Hic-Table-Column-Title-Naksatra">Nakṣatra</div>
+                    <div className="Hic-Table-Column-Title-Devata">Devatā</div>
+                    </Stack>
+                </div>
                 <div>
                 {arr.map(
-                (m, index) => <div className={index%2==0 ? "Hic-Table-Row-Even" : "Hic-Table-Row-Odd"}><Stack spacing={1.5} direction="row">
+                (m, index) => <div className={index%2==0 ? "Hic-Table-Row-Even" : "Hic-Table-Row-Odd"}>
+                  <Stack spacing={1.5} direction="row">
                     <div style={{textAlign: "right", width: 25}}>{index+1}</div>
-                    <div>{m}</div>
+                    <div className={column1ClassName}>{Array.isArray(m) ? m[0] : m}</div>
+                    <div className={column2ClassName}>{m[1]}</div>
                   </Stack></div>
             )}
                 </div>
+                <div className={this.props.menu == 1 ? "Hic-Table-Footer" : "Hic-Table-Footer-None"}>Source: Table summarized from Gomperts 2001: 101–102</div>
             </Box>
           </Modal>
         </div>

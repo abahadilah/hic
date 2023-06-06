@@ -34,8 +34,9 @@ var slider1Value = 0
 var slider2Value = 0
 
 const CustomSliderStyles = {
-  '& .MuiSlider-rail': {
-   
+  '& .MuiSlider-thumb': {
+    height: 16,
+    width: 16,
   },
   '& .MuiSlider-markLabel': {
     fontFamily: "#Noto Serif",
@@ -246,7 +247,7 @@ class TimeDialog extends React.Component {
         var hh = date.getHours()
         var mm = date.getMinutes()
         
-        var filename = sprintf("time_%1$4d_%2$02d_%3$02d__%4$02d_%5$02d.jpeg", year, month, dd, hh, mm)
+        var filename = sprintf("hic-time.jpg")
 
         var aDownload = document.getElementById("aDownload")
         aDownload.download = filename
@@ -331,7 +332,7 @@ class TimeDialog extends React.Component {
                       max={60} 
                       step={1}   
                       marks={marks}                    
-                      valueLabelDisplay="off" />
+                      valueLabelDisplay="auto" />
                   </div>
                 </div>
                   

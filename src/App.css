@@ -133,6 +133,52 @@
   font-size: 0.75em; 
 }
 
+.Hic-Table-Footer {
+  font-style: italic;
+  margin-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
+.Hic-Table-Footer-None {
+  display: none;
+  font-style: italic;
+  margin-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
+.Hic-Table-Column1 {
+  display: inline;
+}
+
+.Hic-Table-Column-Naksatra {
+  width: 100px;
+}
+
+.Hic-Table-Column-Title-Naksatra {
+  width: 100px;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: white;
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
+.Hic-Table-Column-Title-Devata {
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: white;
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
 .Hic-Week {
   column-count: 7;
   column-gap: 0px;

@@ -729,10 +729,10 @@ class YearTextField extends React.Component {
                   (e)  => this.onWesternChange(e, t)    
                 }
                 InputProps={{
-                  startAdornment: <InputAdornment position="start"><div style={{fontFamily: "Noto Serif", fontSize: "12px"}}>{this.state.western.ad}</div></InputAdornment>,
+                  startAdornment: <InputAdornment position="start"><div style={{fontFamily: "Noto Serif", fontSize: "12px", fontWeight: "bold", color: "#000000"}}>{this.state.western.ad}</div></InputAdornment>,
                   readOnly: true,
                   inputProps: {
-                    style: { fontSize: "1em", fontFamily: "Noto Serif" },
+                    style: { fontSize: "1em", fontFamily: "Noto Serif", fontWeight: "bold" },
                 }
                 }}/>
 

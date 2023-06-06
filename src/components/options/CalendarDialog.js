@@ -471,7 +471,7 @@ class CalendarDialog extends React.Component {
       if (this.props.index >= 0 && this.props.mmMonth && this.props.aMoon) {
         this.monthWindow(this.props.index)
       }
-      
+
       return (
         <div onMouseDown={this.handleTitleClick} onMouseMove={this.handleDialogMove}>          
           <Dialog
@@ -526,6 +526,8 @@ class CalendarDialog extends React.Component {
           </Dialog>
           <DayDialog 
                   id="dayDialog"
+                  wukWeek={this.props.wukWeek}
+                  sevenDay={this.props.sevenDay}
                   zIndexTime={this.props.zIndexTime}
                   zIndexPlanet={this.props.zIndexPlanet}
                   zIndexWuku={this.props.zIndexWuku}

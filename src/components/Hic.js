@@ -26,6 +26,12 @@ const Months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 const MonthNames = ["Vaiśākha", "Jyeṣṭha", "Āṣāḍha", 
 "Śravaṇa", "Bhādrapada", "Āśvina", "Kārttika", 
 "Mārgaśīrṣa", "Pauṣa", "Māgha", "Phālguna", "Caitra"];
+const sevenDay = ["Ā", "SO", "AṄ", "BU", "BR̥", "ŚU", "ŚA"];
+const wukWeek = ["Sinta", "Landep", "Wukir", "Kurantil", "Tolu",
+        "Gumbreg", "Wariganing Wariga", "Wariga", "Julung", "Julung Sungsang", "Dungulan",
+        "Kuninan", "Langkir", "Madasiha", "Julung Pujut", "Pahang", "Kuru Wlut",
+        "Marakih", "Tambir", "Madangkungan", "Maha Tal", "Wuyai", "Manahil", "Prang Bakat",
+        "Balamuki", "Wugu-wugu", "Wayang-wayang", "Kulawu", "Dukut", "Watu Gunung"];
 
 var keyYearTextField = 1
 const Kaliyuga = 4600
@@ -673,11 +679,14 @@ class Hic extends React.Component {
                 key={this.state.keyAboutDialog}
                 open={this.state.isAboutOptionsShow} />
             <TableDialog 
+                wukWeek={wukWeek}
                 key={this.state.keyTableDialog}
                 open={this.state.isTableDialogShow}
                 title={this.state.tableTitle}
                 menu={this.state.tableMenu} />
             <CalendarDialog 
+                sevenDay={sevenDay}
+                wukWeek={wukWeek}
                 left={this.state.calendarDialogX}
                 top={this.state.calendarDialogY}
                 planetBringToFrontHandleCallback={this.planetBringToFrontHandleCallback}

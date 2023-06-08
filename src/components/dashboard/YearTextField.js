@@ -554,7 +554,7 @@ class YearTextField extends React.Component {
           if (jd1 > sMonth[0] && jd2 < sMonth[12]) msg1 = msg1 + "/kṣaya";          
           this.julday2Date(parseInt(jd1), this.state.calendar);
 
-          msg2 = sprintf("%1$4d %2$s %3$2d %4$5.2f-", wYear, this.state.westMonth[wMonth-1], wDay, jd1 - parseInt(jd1));
+          msg2 = sprintf("%1$4d %2$s %3$2d %4$5.2f–", wYear, this.state.westMonth[wMonth-1], wDay, jd1 - parseInt(jd1));
 
           this.julday2Date(parseInt(jd2), this.state.calendar);
 

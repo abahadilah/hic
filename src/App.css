@@ -157,10 +157,28 @@
 }
 
 .Hic-Table-Column-Naksatra {
+  width: 120px;
+}
+
+.Hic-Table-Column-Tithi {
   width: 100px;
 }
 
+.Hic-Table-Column-Rasi1 {
+  width: 75px;
+}
+
 .Hic-Table-Column-Title-Naksatra {
+  width: 120px;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: white;
+  font-family: "Noto Serif";
+  font-size: 0.75em; 
+}
+
+.Hic-Table-Column-Title-Tithi {
   width: 100px;
   font-weight: bold;
   padding-top: 8px;

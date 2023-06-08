@@ -219,7 +219,7 @@ class DayDialog extends React.Component {
       msgW = sprintf("%1$s %2$4d %3$s %4$2d %5$s", msgW, y1, this.props.westMonth[parseInt(this.props.wM[day])-1], 
         this.props.wD[day],  wkDy)
 
-        yearSave = sprintf("%1$4d_%2$2d_%3$2d", y1, parseInt(this.props.wM[day]), 
+        yearSave = sprintf("%1$4d_%2$02d_%3$2d", y1, parseInt(this.props.wM[day]), 
         this.props.wD[day])
       
       
@@ -698,7 +698,7 @@ class DayDialog extends React.Component {
 
     onPlanet(e) {
       this.handleCookie("planeChecked", e.target.checked)
-      this.props.planetCheckedCallback(e.target.checked)
+      this.props.planetCheckedCallback(yearSave)
     }
 
     onWuku(e) {
@@ -816,7 +816,7 @@ class DayDialog extends React.Component {
 
     onTime(e) {
       this.handleCookie("timeChecked", e.target.checked)
-      this.props.timeCheckedCallback(e.target.checked)
+      this.props.timeCheckedCallback(yearSave)
     }
 
     planetCloseHandleCallback() {
@@ -937,6 +937,7 @@ class DayDialog extends React.Component {
           </Dialog>
           <div>
             <PlanetDialog     
+                yearSave={this.props.yearSave ? this.props.yearSave : yearSave}
                 zIndex={this.props.zIndexPlanet}
                 open={this.props.planetSelected} 
                 hasBija={this.props.kaliyuga >= this.props.bijaBreakpoint}
@@ -948,6 +949,7 @@ class DayDialog extends React.Component {
           </div>
           <div>
             <TimeDialog     
+            yearSave={this.props.yearSave ? this.props.yearSave : yearSave}
             zIndex={this.props.zIndexTime}
             sunriseText={sunriseText}
             mean={this.props.mean}

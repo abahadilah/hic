@@ -149,7 +149,7 @@ class HicAppBar extends React.Component {
               <div>Hindu Calendar Conversion</div>
               <div style={{fontSize: 16}}>Canon: {Canons.toString(this.props.canon.value)}</div>
             </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block'} }}>
+            <Box sx={{ display: { xs: 'none', sm: 'block', marginTop: 24} }}>
               
                 <Button id="options-button" key="Options" sx={{ color: '#fff' }}  onClick={
                   (e)  => this.onOptionsMenuClick(e)
@@ -202,11 +202,17 @@ class HicAppBar extends React.Component {
             <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 0, "Tithi/Karaṇa")}>
               Tithi/Karaṇa
             </MenuItem>
+            <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 6, "Muhūrta")}>
+            Muhūrta
+            </MenuItem>
             <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 1, "Nakṣatra/Devatā")}>
             Nakṣatra/Devatā
               </MenuItem>
             <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 2, "Yoga")}>
               Yoga
+            </MenuItem>
+            <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 5, "Rāśi")}>
+            Rāśi
             </MenuItem>
             <MenuItem onClick={ (e) => this.onTableMenuItemClick(e, 3, "Jupiter Year")}>
               Jupiter Year

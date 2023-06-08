@@ -76,6 +76,7 @@ class Hic extends React.Component {
           gLat: 23.2,
           ns: "S",
           ew: "E",
+          yearSave: "",
           isLocationOptionsShow: false,
           isPreferencesOptionsShow: false,
           isAboutOptionsShow: false,
@@ -266,6 +267,9 @@ class Hic extends React.Component {
         this.setState({
             isCalendarDialogShow: false,
             isDayDialogOpen: false,
+            planetSelected: false, 
+            timeSelected: false,   
+            wukuSelected: false  
         })
 
         keyYearTextField++
@@ -383,11 +387,12 @@ class Hic extends React.Component {
         )
     }
 
-    planetCheckedCallback = () => {
+    planetCheckedCallback = (yearSave) => {
         this.setState(
             {
                 planetSelected: this.props.cookies.get("planeChecked") ? this.props.cookies.get("planeChecked") == "true" : false,
                 zIndexPlanet: this.state.zIndex+1,
+                yearSave: yearSave
 
             }
         )
@@ -510,11 +515,12 @@ class Hic extends React.Component {
     }
     
 
-    timeCheckedCallback = () => {
+    timeCheckedCallback = (yearSave) => {
         this.setState(
             {
                 timeSelected: this.props.cookies.get("timeChecked") ? this.props.cookies.get("timeChecked") == "true" : false,
                 zIndexTime: this.state.zIndex+1,
+                yearSave: yearSave
             }
         )
     }
@@ -678,7 +684,8 @@ class Hic extends React.Component {
             <AboutDialog 
                 key={this.state.keyAboutDialog}
                 open={this.state.isAboutOptionsShow} />
-            <TableDialog 
+            <TableDialog planetSelected
+            
                 wukWeek={wukWeek}
                 key={this.state.keyTableDialog}
                 open={this.state.isTableDialogShow}
@@ -706,6 +713,7 @@ class Hic extends React.Component {
                 updateKaliyugaCallback={this.updateKaliyugaCallback}
                 updateCalendarIndexCallback={this.updateCalendarIndexCallback}
                 planetSelected={this.state.planetSelected}
+                yearSave={this.state.yearSave}
                 zIndexPlanet={this.state.zIndexPlanet}
                 zIndexTime={this.state.zIndexTime}
                 zIndexWuku={this.state.zIndexWuku}

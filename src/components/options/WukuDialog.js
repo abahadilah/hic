@@ -110,7 +110,7 @@ class WukuDialog extends React.Component {
       }
 
       var item7 = this.props.sevenDay
-      item7[item7.length-1] = "**";
+      item7[7] = "**";
 
       return (
         <div  onMouseDown={this.handleTitleClick}>          

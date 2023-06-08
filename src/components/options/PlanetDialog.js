@@ -42,6 +42,7 @@ class PlanetDialog extends React.Component {
 
         this.handleClose = this.handleClose.bind(this)
         this.handleTitleClick = this.handleTitleClick.bind(this)
+        this.handleSave = this.handleSave.bind(this)
     }
 
     componentDidMount() {
@@ -81,8 +82,7 @@ class PlanetDialog extends React.Component {
         var hh = date.getHours()
         var mm = date.getMinutes()
         
-        var filename = sprintf("hic-planet.jpg")
-
+        var filename = (this.props.yearSave) ? sprintf("hic-planet_%1$s.jpg", this.props.yearSave) : sprintf("hic-planet.jpg")
 
         var aDownload = document.getElementById("aDownload")
         aDownload.download = filename

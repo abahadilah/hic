@@ -79,6 +79,7 @@ class TimeDialog extends React.Component {
         this.onSlider1OnChanged = this.onSlider1OnChanged.bind(this)
         this.onSlider2OnChanged = this.onSlider2OnChanged.bind(this)
         this.handleTitleClick = this.handleTitleClick.bind(this)
+        this.handleSave = this.handleSave.bind(this)
       }
 
     componentDidMount() {
@@ -247,7 +248,7 @@ class TimeDialog extends React.Component {
         var hh = date.getHours()
         var mm = date.getMinutes()
         
-        var filename = sprintf("hic-time.jpg")
+        var filename = (this.props.yearSave) ? sprintf("hic-time_%1$s.jpg", this.props.yearSave) : sprintf("hic-time.jpg")
 
         var aDownload = document.getElementById("aDownload")
         aDownload.download = filename
@@ -321,7 +322,7 @@ class TimeDialog extends React.Component {
                       marks={marks}                      
                       valueLabelDisplay="auto" />
                   </div>
-                  <div>Palas</div>
+                  <div style={{marginLeft: 8}}>Palas</div>
                   <div style={{marginLeft: 8, marginRight: 8}}>
                     <Slider 
                     sx={CustomSliderStyles}

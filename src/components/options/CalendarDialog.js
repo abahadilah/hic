@@ -126,8 +126,8 @@ class CalendarDialog extends React.Component {
       this.props.dayDialogHandleCloseCallback()  
     }
 
-    planetCheckedCallback = () => {
-      this.props.planetCheckedCallback()  
+    planetCheckedCallback = (yearSave) => {
+      this.props.planetCheckedCallback(yearSave)  
     }
 
     planetBringToFrontHandleCallback = () => {
@@ -204,8 +204,8 @@ class CalendarDialog extends React.Component {
       })
     }
 
-    timeCheckedCallback = () => {
-      this.props.timeCheckedCallback()  
+    timeCheckedCallback = (yearSave) => {
+      this.props.timeCheckedCallback(yearSave)  
     }
     
     handleClose() {
@@ -526,6 +526,7 @@ class CalendarDialog extends React.Component {
           </Dialog>
           <DayDialog 
                   id="dayDialog"
+                  yearSave={this.props.yearSave}
                   wukWeek={this.props.wukWeek}
                   sevenDay={this.props.sevenDay}
                   zIndexTime={this.props.zIndexTime}
